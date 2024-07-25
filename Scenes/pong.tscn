@@ -1,0 +1,150 @@
+[gd_scene load_steps=22 format=3 uid="uid://c6d6t4rabic7g"]
+
+[ext_resource type="Script" path="res://Scripts/paddle_left.gd" id="1_bupd7"]
+[ext_resource type="Script" path="res://Scenes/pong.gd" id="1_vrb1n"]
+[ext_resource type="Texture2D" uid="uid://cx8h5x1gvc8rn" path="res://Sprites/paddle_l.png" id="2_bgkg0"]
+[ext_resource type="Texture2D" uid="uid://dh53kdwx6hn3h" path="res://Sprites/paddle.png" id="2_xn1ju"]
+[ext_resource type="Script" path="res://Scripts/paddle_right.gd" id="3_e3l44"]
+[ext_resource type="Texture2D" uid="uid://d34vecrysc02e" path="res://Sprites/center_line.png" id="4_yibih"]
+[ext_resource type="Texture2D" uid="uid://w163pxpb3c4y" path="res://Sprites/spr_border.png" id="5_lb0o8"]
+[ext_resource type="Texture2D" uid="uid://cyrp8m5g3gdgf" path="res://Sprites/score_bkg.png" id="5_yhs52"]
+[ext_resource type="Script" path="res://Scenes/ball.gd" id="6_ckefp"]
+[ext_resource type="Texture2D" uid="uid://b36ercd1v4keh" path="res://Sprites/ball.png" id="6_n830a"]
+[ext_resource type="Script" path="res://Scenes/left_score_zone.gd" id="11_j6t8c"]
+[ext_resource type="Script" path="res://Scenes/right_score_zone.gd" id="12_djctv"]
+[ext_resource type="Script" path="res://Scenes/left_score_label.gd" id="13_iopwm"]
+[ext_resource type="Script" path="res://Scenes/right_score_label.gd" id="14_gos43"]
+[ext_resource type="Script" path="res://Scenes/rally_label.gd" id="16_f0k7i"]
+[ext_resource type="FontFile" uid="uid://dvgwociwuumxr" path="res://Fonts/pricedown bl.otf" id="16_qocaf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4epei"]
+size = Vector2(20.25, 94)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfl86"]
+size = Vector2(1024, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lot74"]
+size = Vector2(18, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q34ao"]
+size = Vector2(20, 481)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brk2w"]
+size = Vector2(20, 476)
+
+[node name="Pong" type="Node2D"]
+script = ExtResource("1_vrb1n")
+
+[node name="paddle_left" type="CharacterBody2D" parent="."]
+position = Vector2(34, 297)
+script = ExtResource("1_bupd7")
+
+[node name="paddle_left_collision" type="CollisionShape2D" parent="paddle_left"]
+shape = SubResource("RectangleShape2D_4epei")
+
+[node name="spr_paddle_left" type="Sprite2D" parent="paddle_left"]
+texture = ExtResource("2_bgkg0")
+
+[node name="paddle_right" type="CharacterBody2D" parent="."]
+position = Vector2(990, 297)
+script = ExtResource("3_e3l44")
+
+[node name="paddle_right_collision" type="CollisionShape2D" parent="paddle_right"]
+shape = SubResource("RectangleShape2D_4epei")
+
+[node name="spr_paddle_right" type="Sprite2D" parent="paddle_right"]
+texture = ExtResource("2_xn1ju")
+
+[node name="spr_center_line" type="Sprite2D" parent="."]
+position = Vector2(512, 256)
+texture = ExtResource("4_yibih")
+
+[node name="spr_border_top" type="Sprite2D" parent="."]
+position = Vector2(512, 47)
+texture = ExtResource("5_lb0o8")
+
+[node name="score_board" type="StaticBody2D" parent="."]
+position = Vector2(512, 31.5)
+
+[node name="score_collision" type="CollisionShape2D" parent="score_board"]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_mfl86")
+
+[node name="spr_score_bkg" type="Sprite2D" parent="score_board/score_collision"]
+position = Vector2(0, -7.5)
+texture = ExtResource("5_yhs52")
+
+[node name="bottom_border" type="StaticBody2D" parent="."]
+position = Vector2(513, 531)
+
+[node name="spr_border_bottom" type="Sprite2D" parent="bottom_border"]
+position = Vector2(-1, 0)
+texture = ExtResource("5_lb0o8")
+
+[node name="score_collision" type="CollisionShape2D" parent="bottom_border"]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_mfl86")
+
+[node name="ball" type="CharacterBody2D" parent="."]
+position = Vector2(512, 278)
+script = ExtResource("6_ckefp")
+
+[node name="spr_ball" type="Sprite2D" parent="ball"]
+texture = ExtResource("6_n830a")
+
+[node name="ball_collision" type="CollisionShape2D" parent="ball"]
+shape = SubResource("RectangleShape2D_lot74")
+
+[node name="left_score_zone" type="Area2D" parent="."]
+script = ExtResource("11_j6t8c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left_score_zone"]
+position = Vector2(1, 286.5)
+shape = SubResource("RectangleShape2D_q34ao")
+
+[node name="right_score_zone" type="Area2D" parent="."]
+script = ExtResource("12_djctv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right_score_zone"]
+position = Vector2(1022, 291)
+shape = SubResource("RectangleShape2D_brk2w")
+
+[node name="left_score_label" type="Label" parent="."]
+offset_left = 18.0
+offset_top = -5.0
+offset_right = 206.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.376471, 0.423529, 0.505882, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("16_qocaf")
+theme_override_font_sizes/font_size = 56
+script = ExtResource("13_iopwm")
+
+[node name="right_score_label" type="Label" parent="."]
+offset_left = 817.0
+offset_top = -5.0
+offset_right = 1005.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.117647, 0.533333, 0.458824, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("16_qocaf")
+theme_override_font_sizes/font_size = 56
+script = ExtResource("14_gos43")
+
+[node name="rally_label" type="Label" parent="."]
+offset_left = 473.0
+offset_top = 4.0
+offset_right = 552.0
+offset_bottom = 61.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.788235, 0.141176, 0.392157, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("16_qocaf")
+theme_override_font_sizes/font_size = 45
+script = ExtResource("16_f0k7i")
+
+[connection signal="body_entered" from="left_score_zone" to="left_score_zone" method="_on_body_entered"]
+[connection signal="body_entered" from="right_score_zone" to="right_score_zone" method="_on_body_entered"]
