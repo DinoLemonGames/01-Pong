@@ -6,3 +6,4 @@ func _on_body_entered(body):
 		$"..".rally = 0
 		$"../ball".dir_x_decide = 1
 		$"../ball"._ready()
+		$"../left_score_label".label_settings.font_size = 70

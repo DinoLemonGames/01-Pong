@@ -39,6 +39,20 @@ func _physics_process(delta):
 		if collision_info.get_collider() == $"../paddle_left" or collision_info.get_collider() == $"../paddle_right":
 			#print(collision_info)
 			$"..".rally += 1
+			# Make the particle more intense
+			$"../CPUParticles2D".speed_scale += 0.01
+			$"../CPUParticles2D".emission_sphere_radius += 0.7
+			$"../CPUParticles2D".scale_amount_max += 0.07
+			$"../CPUParticles2D".scale_amount_min += 0.05
+			$"../CPUParticles2D".lifetime += 0.005
+			# Speed up the text floating
+			$"../rally_label".speed += 0.05
+			$"../rally_label".rotation_speed += 0.01
+			$"../rally_label".rotation_amplitude += 0.005
+			# Make Rally Text bigger
+			$"../rally_label".label_settings.font_size = $"../rally_label".text_size + 35
+			$"../rally_label".text_size += 1
+			#$"../rally_label".get_font(""res://Fonts/pricedown bl.otf"") = 60
 			# Speed up the ball
 			speed += 0.05
 		# If colliding with anything

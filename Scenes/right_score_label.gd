@@ -9,3 +9,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	set_text(str($"..".right_score))
+	
+	# Lerp back to the original size of text
+	label_settings.font_size = lerp(label_settings.font_size, 56, 0.02)

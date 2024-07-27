@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c6d6t4rabic7g"]
+[gd_scene load_steps=26 format=3 uid="uid://c6d6t4rabic7g"]
 
 [ext_resource type="Script" path="res://Scripts/paddle_left.gd" id="1_bupd7"]
 [ext_resource type="Script" path="res://Scenes/pong.gd" id="1_vrb1n"]
@@ -33,27 +33,15 @@ size = Vector2(20, 481)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brk2w"]
 size = Vector2(20, 476)
 
-[sub_resource type="LabelSettings" id="LabelSettings_4by2y"]
-font_size = 56
-outline_size = 10
-outline_color = Color(0.376471, 0.423529, 0.505882, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_xtwkp"]
-font_size = 56
-outline_size = 10
-outline_color = Color(0.117647, 0.533333, 0.458824, 1)
-
 [sub_resource type="LabelSettings" id="LabelSettings_0fibe"]
-outline_size = 10
-outline_color = Color(0.788235, 0.141176, 0.392157, 1)
 
 [sub_resource type="Curve" id="Curve_vkpmd"]
 _data = [Vector2(0.00561798, 1), 0.0, 0.0, 0, 0, Vector2(0.988764, 0.582418), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_1y261"]
-offsets = PackedFloat32Array(0, 0.653333, 0.893333, 1)
-colors = PackedColorArray(0.788235, 0.141176, 0.392157, 1, 0.976471, 0.572549, 0.321569, 1, 0.968627, 0.894118, 0.462745, 1, 0.137255, 0.137255, 0.137255, 0.360784)
+offsets = PackedFloat32Array(0, 0.42, 0.786667, 1)
+colors = PackedColorArray(0.870588, 0.137255, 0.113725, 1, 0.937255, 0.388235, 0.113725, 1, 0.952941, 0.788235, 0.243137, 1, 0.219608, 0.219608, 0.219608, 0.145098)
 
 [node name="Pong" type="Node2D"]
 script = ExtResource("1_vrb1n")
@@ -146,7 +134,6 @@ theme_override_colors/font_outline_color = Color(0.376471, 0.423529, 0.505882, 1
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("16_qocaf")
 theme_override_font_sizes/font_size = 56
-label_settings = SubResource("LabelSettings_4by2y")
 script = ExtResource("13_iopwm")
 
 [node name="right_score_label" type="Label" parent="."]
@@ -159,7 +146,6 @@ theme_override_colors/font_outline_color = Color(0.117647, 0.533333, 0.458824, 1
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("16_qocaf")
 theme_override_font_sizes/font_size = 56
-label_settings = SubResource("LabelSettings_xtwkp")
 script = ExtResource("14_gos43")
 
 [node name="rally_label" type="Label" parent="."]
@@ -183,11 +169,11 @@ theme_override_font_sizes/font_size = 45
 label_settings = SubResource("LabelSettings_0fibe")
 script = ExtResource("16_f0k7i")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="rally_label"]
 show_behind_parent = true
-position = Vector2(512, 59.965)
+position = Vector2(40, 30)
 amount = 500
-lifetime = 0.25
+lifetime = 0.35
 speed_scale = 0.1
 lifetime_randomness = 0.09
 fixed_fps = 60
@@ -197,8 +183,8 @@ emission_sphere_radius = 15.0
 gravity = Vector2(0, -600)
 radial_accel_min = -50.0
 radial_accel_max = -40.0
-scale_amount_min = 0.5
-scale_amount_max = 0.8
+scale_amount_min = 0.25
+scale_amount_max = 0.5
 scale_amount_curve = SubResource("Curve_vkpmd")
 color_ramp = SubResource("Gradient_1y261")
 

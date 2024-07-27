@@ -1,1 +1,7 @@
 res://Scenes/pong.tscn
+res://Scenes/rally_label.gd
+res://Scenes/ball.gd
+res://Scenes/left_score_label.gd
+res://Scenes/right_score_label.gd
+res://Scenes/left_score_zone.gd
+res://Scenes/right_score_zone.gd
