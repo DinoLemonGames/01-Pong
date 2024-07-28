@@ -1,29 +1,35 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1722042687
+::res://::1722106082
 icon.svg::CompressedTexture2D::7161129454592948988::1721686053::1721686065::1::::<><>::
 ::res://Aseprite Files/::1721689083
+::res://Audio/::1722107997
+ambient_crowd.wav::AudioStreamWAV::6026631484705702759::1722105851::1722106347::1::::<><>::
+ball_hit.wav::AudioStreamWAV::8705870354988368546::1722107997::1722107997::1::::<><>::
+goal_audio.wav::AudioStreamWAV::7696631816006061808::1722106040::1722106055::1::::<><>::
 ::res://DinoLemon/::1721689216
 Dino Lemon - No Words.png::CompressedTexture2D::2252357104267955017::1721686388::1721689216::1::::<><>::
 ::res://Fonts/::1721945823
 CONSOLA.TTF::FontFile::5079998451483330736::1721939097::1721939097::1::::<><>::
 pricedown bl.otf::FontFile::8646974927390115055::1721945823::1721945823::1::::<><>::
-::res://Scenes/::1722043451
-ball.gd::GDScript::-1::1721946833::0::1::::<>CharacterBody2D<>::
-left_score_label.gd::GDScript::-1::1721946220::0::1::::<>Label<>::
-left_score_zone.gd::GDScript::-1::1721946275::0::1::::<>Area2D<>::
-pong.gd::GDScript::-1::1721939800::0::1::::<>Node2D<>::
-pong.tscn::PackedScene::6956806359727822174::1722043451::0::1::::<><>::res://Scripts/paddle_left.gd<>res://Scenes/pong.gd<>uid://cx8h5x1gvc8rn::::res://Sprites/paddle_l.png<>uid://dh53kdwx6hn3h::::res://Sprites/paddle.png<>res://Scripts/paddle_right.gd<>uid://d34vecrysc02e::::res://Sprites/center_line.png<>uid://w163pxpb3c4y::::res://Sprites/spr_border.png<>uid://cyrp8m5g3gdgf::::res://Sprites/score_bkg.png<>res://Scenes/ball.gd<>uid://b36ercd1v4keh::::res://Sprites/ball.png<>res://Scenes/left_score_zone.gd<>res://Scenes/right_score_zone.gd<>res://Scenes/left_score_label.gd<>res://Scenes/right_score_label.gd<>res://Scenes/rally_label.gd<>uid://dvgwociwuumxr::::res://Fonts/pricedown bl.otf
-rally_label.gd::GDScript::-1::1722043362::0::1::::<>Label<>::
-right_score_label.gd::GDScript::-1::1721939512::0::1::::<>Label<>::
-right_score_zone.gd::GDScript::-1::1721946275::0::1::::<>Area2D<>::
-::res://Scripts/::1721933154
+::res://Scenes/::1722120873
+pong.tscn::PackedScene::6956806359727822174::1722120873::0::1::::<><>::res://Scripts/paddle_left.gd<>res://Scripts/pong.gd<>uid://cx8h5x1gvc8rn::::res://Sprites/paddle_l.png<>uid://dh53kdwx6hn3h::::res://Sprites/paddle.png<>res://Scripts/paddle_right.gd<>uid://d34vecrysc02e::::res://Sprites/center_line.png<>uid://w163pxpb3c4y::::res://Sprites/spr_border.png<>uid://cyrp8m5g3gdgf::::res://Sprites/score_bkg.png<>res://Scripts/ball.gd<>uid://b36ercd1v4keh::::res://Sprites/ball.png<>res://Scripts/left_score_zone.gd<>res://Scripts/right_score_zone.gd<>res://Scripts/left_score_label.gd<>res://Scripts/right_score_label.gd<>res://Scripts/rally_label.gd<>uid://dvgwociwuumxr::::res://Fonts/pricedown bl.otf<>uid://bawi6vk4pfp1::::res://Sprites/smoke_particle.png<>res://Scenes/part_ball.gd<>uid://cr4l0fq8defv0::::res://Audio/ambient_crowd.wav<>uid://dhwknwfiqfb1q::::res://Audio/goal_audio.wav<>uid://drdo1wy7ams08::::res://Sprites/confetti.png<>uid://dwbgobg2va0xa::::res://Audio/ball_hit.wav
+part_ball.gd::GDScript::-1::1722108553::0::1::::<>CPUParticles2D<>::
+::res://Scripts/::1722109190
+ball.gd::GDScript::-1::1722108695::0::1::::<>CharacterBody2D<>::
+left_score_label.gd::GDScript::-1::1722050877::0::1::::<>Label<>::
+left_score_zone.gd::GDScript::-1::1722108325::0::1::::<>Area2D<>::
 paddle_left.gd::GDScript::-1::1721933117::0::1::::<>CharacterBody2D<>::
 paddle_right.gd::GDScript::-1::1721933154::0::1::::<>CharacterBody2D<>::
-::res://Sprites/::1722043864
-ball.png::CompressedTexture2D::4415977353292959087::1721934405::1721934407::1::::<><>::
+pong.gd::GDScript::-1::1721939800::0::1::::<>Node2D<>::
+rally_label.gd::GDScript::-1::1722108236::0::1::::<>Label<>::
+right_score_label.gd::GDScript::-1::1722050877::0::1::::<>Label<>::
+right_score_zone.gd::GDScript::-1::1722109190::0::1::::<>Area2D<>::
+::res://Sprites/::1722108885
+ball.png::CompressedTexture2D::4415977353292959087::1722108777::1722108778::1::::<><>::
 center_line.png::CompressedTexture2D::9185698960258646766::1721934066::1721934056::1::::<><>::
-paddle.png::CompressedTexture2D::7714233415546312955::1721934514::1721934518::1::::<><>::
+confetti.png::CompressedTexture2D::8359563188771726875::1722120939::1722120940::1::::<><>::
+paddle.png::CompressedTexture2D::7714233415546312955::1722120936::1721934518::1::::<><>::
 paddle_l.png::CompressedTexture2D::6455789078214192755::1721934488::1721934518::1::::<><>::
 score_bkg.png::CompressedTexture2D::6493438399542957709::1721935160::1721935109::1::::<><>::
-smoke_particle.png::CompressedTexture2D::71540564988584820::1722043914::1722043917::1::::<><>::
+smoke_particle.png::CompressedTexture2D::71540564988584820::1722066553::1722043917::1::::<><>::
 spr_border.png::CompressedTexture2D::1599761434712089354::1721933966::1721933977::1::::<><>::

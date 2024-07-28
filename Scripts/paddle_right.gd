@@ -3,6 +3,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 
 func _physics_process(delta):
+	
 	position.x = 990
 	
 	var direction = Input.get_axis("right_paddle_up", "right_paddle_down")

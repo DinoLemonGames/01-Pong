@@ -1,25 +1,45 @@
-[gd_scene load_steps=28 format=3 uid="uid://c6d6t4rabic7g"]
+[gd_scene load_steps=46 format=3 uid="uid://c6d6t4rabic7g"]
 
 [ext_resource type="Script" path="res://Scripts/paddle_left.gd" id="1_bupd7"]
-[ext_resource type="Script" path="res://Scenes/pong.gd" id="1_vrb1n"]
+[ext_resource type="Script" path="res://Scripts/pong.gd" id="1_vrb1n"]
 [ext_resource type="Texture2D" uid="uid://cx8h5x1gvc8rn" path="res://Sprites/paddle_l.png" id="2_bgkg0"]
 [ext_resource type="Texture2D" uid="uid://dh53kdwx6hn3h" path="res://Sprites/paddle.png" id="2_xn1ju"]
 [ext_resource type="Script" path="res://Scripts/paddle_right.gd" id="3_e3l44"]
 [ext_resource type="Texture2D" uid="uid://d34vecrysc02e" path="res://Sprites/center_line.png" id="4_yibih"]
 [ext_resource type="Texture2D" uid="uid://w163pxpb3c4y" path="res://Sprites/spr_border.png" id="5_lb0o8"]
 [ext_resource type="Texture2D" uid="uid://cyrp8m5g3gdgf" path="res://Sprites/score_bkg.png" id="5_yhs52"]
-[ext_resource type="Script" path="res://Scenes/ball.gd" id="6_ckefp"]
+[ext_resource type="Script" path="res://Scripts/ball.gd" id="6_ckefp"]
 [ext_resource type="Texture2D" uid="uid://b36ercd1v4keh" path="res://Sprites/ball.png" id="6_n830a"]
-[ext_resource type="Script" path="res://Scenes/left_score_zone.gd" id="11_j6t8c"]
-[ext_resource type="Script" path="res://Scenes/right_score_zone.gd" id="12_djctv"]
-[ext_resource type="Script" path="res://Scenes/left_score_label.gd" id="13_iopwm"]
-[ext_resource type="Script" path="res://Scenes/right_score_label.gd" id="14_gos43"]
-[ext_resource type="Script" path="res://Scenes/rally_label.gd" id="16_f0k7i"]
+[ext_resource type="Script" path="res://Scripts/left_score_zone.gd" id="11_j6t8c"]
+[ext_resource type="Script" path="res://Scripts/right_score_zone.gd" id="12_djctv"]
+[ext_resource type="Script" path="res://Scripts/left_score_label.gd" id="13_iopwm"]
+[ext_resource type="Script" path="res://Scripts/right_score_label.gd" id="14_gos43"]
+[ext_resource type="Script" path="res://Scripts/rally_label.gd" id="16_f0k7i"]
 [ext_resource type="FontFile" uid="uid://dvgwociwuumxr" path="res://Fonts/pricedown bl.otf" id="16_qocaf"]
 [ext_resource type="Texture2D" uid="uid://bawi6vk4pfp1" path="res://Sprites/smoke_particle.png" id="17_t6bs6"]
+[ext_resource type="Script" path="res://Scenes/part_ball.gd" id="18_ci3db"]
+[ext_resource type="AudioStream" uid="uid://cr4l0fq8defv0" path="res://Audio/ambient_crowd.wav" id="18_qqwlj"]
+[ext_resource type="AudioStream" uid="uid://dhwknwfiqfb1q" path="res://Audio/goal_audio.wav" id="19_8cfc7"]
+[ext_resource type="AudioStream" uid="uid://dwbgobg2va0xa" path="res://Audio/ball_hit.wav" id="20_sfpxy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4epei"]
 size = Vector2(20.25, 94)
+
+[sub_resource type="Gradient" id="Gradient_cp2ks"]
+colors = PackedColorArray(0.0666667, 0.678431, 0.756863, 1, 0.117647, 0.533333, 0.458824, 0)
+
+[sub_resource type="Curve" id="Curve_p576m"]
+min_value = -1.0
+_data = [Vector2(0.0786517, -0.252747), 0.0, 0.0, 0, 0, Vector2(0.94382, -0.274725), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_ossx8"]
+colors = PackedColorArray(0.117647, 0.533333, 0.458824, 1, 0.117647, 0.533333, 0.458824, 0)
+
+[sub_resource type="Curve" id="Curve_wlsmy"]
+min_value = -1.0
+_data = [Vector2(0.0786517, -0.252747), 0.0, 0.0, 0, 0, Vector2(0.94382, -0.274725), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mfl86"]
 size = Vector2(1024, 78)
@@ -55,6 +75,64 @@ point_count = 2
 offsets = PackedFloat32Array(0, 0.653333, 0.893333, 1)
 colors = PackedColorArray(0.788235, 0.141176, 0.392157, 1, 0.976471, 0.572549, 0.321569, 1, 0.968627, 0.894118, 0.462745, 1, 0.137255, 0.137255, 0.137255, 0.360784)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_phkm4"]
+load_path = "res://.godot/imported/confetti.png-3789f60ae7b7c34ce31eae85851674c7.ctex"
+
+[sub_resource type="Curve" id="Curve_0lst5"]
+max_value = 100.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.264045, 100), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_mmc1q"]
+colors = PackedColorArray(0.750175, 0.960632, 0.997886, 1, 1, 1, 1, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5kht7"]
+load_path = "res://.godot/imported/confetti.png-3789f60ae7b7c34ce31eae85851674c7.ctex"
+
+[sub_resource type="Gradient" id="Gradient_icm1e"]
+offsets = PackedFloat32Array(0.793333, 1)
+colors = PackedColorArray(0.460678, 0.866672, 0.486711, 1, 0.356863, 0.701961, 0.380392, 0)
+
+[sub_resource type="Curve" id="Curve_est4l"]
+min_value = -1.0
+_data = [Vector2(0, -0.252747), 0.0, 0.0, 0, 0, Vector2(0.994382, -0.296703), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pwq4x"]
+load_path = "res://.godot/imported/confetti.png-3789f60ae7b7c34ce31eae85851674c7.ctex"
+
+[sub_resource type="Gradient" id="Gradient_kqqco"]
+offsets = PackedFloat32Array(0.793333, 1)
+colors = PackedColorArray(0.0666667, 0.678431, 0.756863, 1, 0.356863, 0.701961, 0.380392, 0)
+
+[sub_resource type="Curve" id="Curve_tq6wr"]
+min_value = -1.0
+_data = [Vector2(0, -0.252747), 0.0, 0.0, 0, 0, Vector2(0.994382, -0.296703), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="GDScript" id="GDScript_0uepe"]
+script/source = "extends AudioStreamPlayer2D
+
+var volume_edit : float
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	volume_edit = volume_db
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if $\"../ball\".position.x > 900:
+		if $\"../ball\".position.distance_to($\"../paddle_right\".position) > 100:
+			volume_db = lerp(volume_db, volume_db+8, 0.05)
+	
+	if $\"../ball\".position.x < 115:
+		if $\"../ball\".position.distance_to($\"../paddle_left\".position) > 100:
+			volume_db = lerp(volume_db, volume_db+8, 0.05)
+	
+	volume_db = lerp(volume_db, volume_edit, 0.01)
+"
+
 [node name="Pong" type="Node2D"]
 script = ExtResource("1_vrb1n")
 
@@ -68,6 +146,26 @@ shape = SubResource("RectangleShape2D_4epei")
 [node name="spr_paddle_left" type="Sprite2D" parent="paddle_left"]
 texture = ExtResource("2_bgkg0")
 
+[node name="part_blue_paddle" type="CPUParticles2D" parent="paddle_left"]
+show_behind_parent = true
+position = Vector2(-8, 0)
+amount = 1500
+lifetime = 0.4
+speed_scale = 0.5
+fixed_fps = 60
+emission_shape = 3
+emission_rect_extents = Vector2(2, 45)
+direction = Vector2(-1, 0)
+spread = 27.28
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 30.0
+scale_amount_max = 3.0
+color_ramp = SubResource("Gradient_cp2ks")
+hue_variation_min = -0.2
+hue_variation_max = 0.29
+hue_variation_curve = SubResource("Curve_p576m")
+
 [node name="paddle_right" type="CharacterBody2D" parent="."]
 position = Vector2(990, 297)
 script = ExtResource("3_e3l44")
@@ -77,6 +175,26 @@ shape = SubResource("RectangleShape2D_4epei")
 
 [node name="spr_paddle_right" type="Sprite2D" parent="paddle_right"]
 texture = ExtResource("2_xn1ju")
+
+[node name="part_green_paddle" type="CPUParticles2D" parent="paddle_right"]
+show_behind_parent = true
+z_index = -1
+position = Vector2(8, 0)
+amount = 1500
+lifetime = 0.4
+speed_scale = 0.5
+fixed_fps = 60
+emission_shape = 3
+emission_rect_extents = Vector2(2, 45)
+spread = 27.28
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 30.0
+scale_amount_max = 3.0
+color_ramp = SubResource("Gradient_ossx8")
+hue_variation_min = -0.2
+hue_variation_max = 0.29
+hue_variation_curve = SubResource("Curve_wlsmy")
 
 [node name="spr_center_line" type="Sprite2D" parent="."]
 z_index = -6
@@ -201,6 +319,125 @@ scale_amount_min = 0.5
 scale_amount_max = 0.8
 scale_amount_curve = SubResource("Curve_vkpmd")
 color_ramp = SubResource("Gradient_1y261")
+
+[node name="part_ball" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+position = Vector2(511, 278)
+amount = 1000
+lifetime = 0.1
+speed_scale = 0.1
+lifetime_randomness = 0.25
+fixed_fps = 60
+texture = ExtResource("17_t6bs6")
+emission_shape = 1
+emission_sphere_radius = 11.12
+gravity = Vector2(0, -600)
+radial_accel_min = -50.0
+radial_accel_max = -40.0
+scale_amount_min = 0.5
+scale_amount_max = 0.8
+scale_amount_curve = SubResource("Curve_vkpmd")
+color_ramp = SubResource("Gradient_1y261")
+script = ExtResource("18_ci3db")
+
+[node name="part_goal_left_white" type="CPUParticles2D" parent="."]
+visible = false
+position = Vector2(0, 288)
+emitting = false
+amount = 250
+lifetime = 3.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+local_coords = true
+texture = SubResource("CompressedTexture2D_phkm4")
+emission_shape = 3
+emission_rect_extents = Vector2(20, 220)
+gravity = Vector2(0, 100)
+initial_velocity_min = 50.0
+initial_velocity_max = 200.0
+angular_velocity_min = -305.46
+angular_velocity_max = 305.45
+linear_accel_min = -52.52
+linear_accel_max = 8.08
+damping_curve = SubResource("Curve_0lst5")
+scale_amount_min = 0.5
+scale_amount_max = 1.5
+color_ramp = SubResource("Gradient_mmc1q")
+
+[node name="part_goal_goal_green" type="CPUParticles2D" parent="."]
+z_index = -6
+position = Vector2(511, 49)
+emitting = false
+amount = 500
+lifetime = 3.2
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+local_coords = true
+texture = SubResource("CompressedTexture2D_5kht7")
+emission_shape = 3
+emission_rect_extents = Vector2(512, 5)
+direction = Vector2(0, 1)
+gravity = Vector2(0, 60)
+initial_velocity_min = 25.0
+initial_velocity_max = 75.0
+angular_velocity_min = -305.46
+angular_velocity_max = 305.45
+linear_accel_min = -52.52
+linear_accel_max = 8.08
+damping_max = 29.293
+scale_amount_min = 0.5
+scale_amount_max = 1.5
+color_ramp = SubResource("Gradient_icm1e")
+hue_variation_min = -0.2
+hue_variation_max = 0.2
+hue_variation_curve = SubResource("Curve_est4l")
+
+[node name="part_goal_goal_blue" type="CPUParticles2D" parent="."]
+z_index = -6
+position = Vector2(511, 49)
+emitting = false
+amount = 500
+lifetime = 3.2
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+local_coords = true
+texture = SubResource("CompressedTexture2D_pwq4x")
+emission_shape = 3
+emission_rect_extents = Vector2(512, 5)
+direction = Vector2(0, 1)
+gravity = Vector2(0, 60)
+initial_velocity_min = 25.0
+initial_velocity_max = 75.0
+angular_velocity_min = -305.46
+angular_velocity_max = 305.45
+linear_accel_min = -52.52
+linear_accel_max = 8.08
+damping_max = 29.293
+scale_amount_min = 0.5
+scale_amount_max = 1.5
+color_ramp = SubResource("Gradient_kqqco")
+hue_variation_min = -0.2
+hue_variation_max = 0.2
+hue_variation_curve = SubResource("Curve_tq6wr")
+
+[node name="snd_ambient_crowd" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(115, 137)
+stream = ExtResource("18_qqwlj")
+volume_db = -6.0
+autoplay = true
+script = SubResource("GDScript_0uepe")
+
+[node name="snd_goal" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(511, 208)
+stream = ExtResource("19_8cfc7")
+volume_db = -6.0
+
+[node name="snd_ball_hit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("20_sfpxy")
+volume_db = 2.0
 
 [connection signal="body_entered" from="left_score_zone" to="left_score_zone" method="_on_body_entered"]
 [connection signal="body_entered" from="right_score_zone" to="right_score_zone" method="_on_body_entered"]

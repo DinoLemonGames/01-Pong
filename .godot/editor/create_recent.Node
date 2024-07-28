@@ -1,6 +1,7 @@
+CPUParticles2D
+AudioStreamPlayer2D
 RichTextLabel
 Node2D
-CPUParticles2D
 Label
 CollisionShape2D
 Area2D

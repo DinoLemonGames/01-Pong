@@ -26,6 +26,8 @@ window/size/resizable=false
 [file_customization]
 
 folder_colors={
+"res://Audio/": "teal",
+"res://Fonts/": "gray",
 "res://Scenes/": "purple",
 "res://Scripts/": "blue",
 "res://Sprites/": "orange"
