@@ -1,11 +1,1 @@
 res://Scenes/pong.tscn
-res://Scenes/rally_label.gd
-res://Scenes/ball.gd
-res://Scripts/rally_label.gd
-res://Scenes/snd_ambient_crowd.gd
-res://Scripts/ball.gd
-res://Scripts/left_score_zone.gd
-res://Scripts/right_score_zone.gd
-res://Scenes/part_ball.gd
-res://Scenes/part_green_paddle.gd
-res://Scripts/paddle_right.gd
